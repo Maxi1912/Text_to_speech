@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 70%;
+  margin: 50px auto;
+  background-color: #9fb6cd;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 5px black;
+  border-radius: 15px;
+}
+select,
+input,
+textarea {
+  display: block;
+  width: 100%;
+}
