@@ -1,10 +1,10 @@
 const msg = new SpeechSynthesisUtterance();
 let voices = [];
 const dropDownMenu = document.querySelector('[name="options"]');
-const inputs = document.querySelectorAll('input, textarea');
-const stopButton = document.querySelector('#stop');
-const speakButton = document.querySelector('#speak');
-msg.text = document.querySelector('textarea').value;
+const inputs = document.querySelectorAll("input, textarea");
+const stopButton = document.querySelector("#stop");
+const speakButton = document.querySelector("#speak");
+msg.text = document.querySelector("textarea").value;
 
 function popularVoices() {
   voices = this.getVoices();
@@ -13,7 +13,7 @@ function popularVoices() {
       return `
     <option value="${voice.name}">${voice.name}, ${voice.lang} </option>`;
     })
-    .join('');
+    .join("");
 }
 
 function setVoice(e) {
@@ -33,8 +33,8 @@ function toggle(startOver = true) {
     speechSynthesis.speak(msg);
   }
 }
-speechSynthesis.addEventListener('voiceschanged', popularVoices);
-dropDownMenu.addEventListener('change', setVoice);
-inputs.forEach((input) => input.addEventListener('change', setOption));
-stopButton.addEventListener('click', () => toggle(false));
-speakButton.addEventListener('click', toggle);
+speechSynthesis.addEventListener("voiceschanged", popularVoices);
+dropDownMenu.addEventListener("change", setVoice);
+inputs.forEach((input) => input.addEventListener("change", setOption));
+stopButton.addEventListener("click", () => toggle(false));
+speakButton.addEventListener("click", toggle);
